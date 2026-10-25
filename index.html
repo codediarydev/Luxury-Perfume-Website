@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Aurelle | Fine Perfume</title>
+
+    <!-- Google Fonts: Cormorant Garamond (elegant headings) + Jost (clean light body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css links -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#home" class="logo">Maison Aurelle</a>
+      <nav class="nav">
+        <a href="#collection">Collection</a>
+        <a href="#notes">The Scent</a>
+        <a href="#list">Private List</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- hero -->
+      <section class="hero" id="home">
+        <div class="hero-text">
+          <h1 class="fade d1">Worn once, <br />remembered always.</h1>
+          <div class="rule fade d2"></div>
+          <p class="fade d2">
+            Hand-blended in small batches from rare oud, iris and Grasse
+            jasmine.
+          </p>
+          <a href="#collection" class="btn fade d3">Discover the collection</a>
+        </div>
+        <!-- Perfume bottle -->
+        <div class="stage fade d2">
+          <div class="halo"></div>
+          <div class="bottle big">
+            <div class="cap"></div>
+            <div class="neck"></div>
+            <div class="body">
+              <div class="liquid"></div>
+              <div class="lable">Aurelle</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collection -->
+      <section class="section" id="collection">
+        <h2>The Collection</h2>
+        <p class="section-intro">
+          Three signatures. Each one made to be worn on skin, not on a shelf.
+        </p>
+        <div class="grid-3">
+          <article class="product">
+            <div class="bottle amber">
+              <div class="cap"></div>
+              <div class="neck"></div>
+              <div class="body">
+                <div class="liquid"></div>
+                <div class="lable">Aurelle</div>
+              </div>
+            </div>
+            <h3>Nuit d'Or</h3>
+            <p class="notes">Oud, amber, black vanilla</p>
+            <p class="price">$240</p>
+            <a href="#list" class="btn btn-outline">Reserve</a>
+          </article>
+
+          <article class="product">
+            <div class="bottle rose">
+              <div class="cap"></div>
+              <div class="neck"></div>
+              <div class="body">
+                <div class="liquid"></div>
+                <div class="lable">Aurelle</div>
+              </div>
+            </div>
+            <h3>Aube Rose</h3>
+            <p class="notes">Damask rose, pink pepper, musk</p>
+            <p class="price">$215</p>
+            <a href="#list" class="btn btn-outline">Reserve</a>
+          </article>
+
+          <article class="product">
+            <div class="bottle pearl">
+              <div class="cap"></div>
+              <div class="neck"></div>
+              <div class="body">
+                <div class="liquid"></div>
+                <div class="lable">Aurelle</div>
+              </div>
+            </div>
+            <h3>Ivoire</h3>
+            <p class="notes">Iris, white jasmine, sandalwood</p>
+            <p class="price">$225</p>
+            <a href="#list" class="btn btn-outline">Reserve</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Fragrance notes -->
+      <section class="section section-plum" id="notes">
+        <h2>Inside Nuit d'Or</h2>
+        <p class="section-intro">
+          A perfume opens, settles, then lingers. Here is how it unfolds.
+        </p>
+        <div class="grid-3 notes-grid">
+          <div class="note">
+            <h3>First breath</h3>
+            <p>Bergamot and saffron open the scent with bright warmth.</p>
+          </div>
+          <div class="note">
+            <h3>The heart</h3>
+            <p>Smoky oud and Grasse jasmine bloom as it settles on skin.</p>
+          </div>
+          <div class="note">
+            <h3>What remains</h3>
+            <p>Amber and black vanilla stay behind for hours.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote -->
+      <section class="section quote-section">
+        <blockquote>
+          People ask what I am wearing before they ask my name.
+          <cite>Isabelle, client since the first season</cite>
+        </blockquote>
+      </section>
+
+      <!-- Private list (form) -->
+      <section class="section section-plum" id="list">
+        <h2>Join the private list</h2>
+        <p class="section-intro">
+          Be the first to hear about new releases and limited batches.
+        </p>
+        <form class="form">
+          <label for="email">Your email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            required
+          />
+          <button type="submit" class="btn">Request invitation</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer-logo">Maison Aurelle</p>
+      <p>14 Rue de la Paix | concierge@aurelle.example</p>
+    </footer>
+  </body>
+</html>

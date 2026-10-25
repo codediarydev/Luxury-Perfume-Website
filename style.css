@@ -1,0 +1,496 @@
+/* CSS Variable */
+:root {
+  --night: #15101c;
+  --plum: #211628;
+  --gold: #c8a45d;
+  --gold-light: #e8d3a2;
+  --pearl: #efe9f0;
+  --muted: #a89fb0;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  background: var(--night);
+  color: var(--pearl);
+  line-height: 1.8;
+}
+
+/* common elemnts */
+h1,
+h2,
+h3,
+.logo,
+.footer-logo,
+blockquote,
+.price {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 16px 36px;
+  border: 1px solid var(--gold);
+  color: var(--night);
+  background: linear-gradient(
+    100deg,
+    var(--gold),
+    var(--gold-light),
+    var(--gold)
+  );
+  background-size: 200% 100%;
+  font-family: "Jost", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-position 0.8s,
+    color 0.4s,
+    background-color 0.4s;
+}
+.btn:hover {
+  background-position: 100% 0;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+}
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--night);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 8%;
+  position: sticky;
+  top: 0;
+  background: var(--night);
+  border-bottom: 1px solid rgba(200, 164, 93, 0.25);
+  z-index: 10;
+}
+.logo {
+  font-size: 1.7rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+.nav {
+  display: flex;
+  gap: 40px;
+}
+.nav a {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.4s;
+}
+.nav a:hover {
+  color: var(--gold);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 88vh;
+  padding: 60px 8%;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin-bottom: 0;
+}
+.hero p {
+  max-width: 400px;
+  margin-bottom: 40px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.rule {
+  width: 90px;
+  height: 1px;
+  margin: 32px 0;
+  background: var(--gold);
+  transform-origin: left;
+}
+
+/* Perfume bottle */
+.bottle {
+  font-size: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.7s;
+
+  /* color for the liquid */
+  --liquid-top: #d9a441;
+  --liquid-bottom: #6b3a14;
+}
+
+.rose {
+  --liquid-top: #f0b4b8;
+  --liquid-bottom: #b0566b;
+}
+.pearl {
+  --liquid-top: #f3e6c8;
+  --liquid-bottom: #c9b07a;
+}
+.big {
+  font-size: 22px;
+}
+.cap {
+  width: 4em;
+  height: 3em;
+  border-radius: 0.3em 0.3em 0.1em 0.1em;
+  background: linear-gradient(
+    90deg,
+    #7a5c26,
+    var(--gold-light) 35%,
+    var(--gold) 60%
+  );
+}
+.neck {
+  width: 2.4em;
+  height: 1em;
+  background: linear-gradient(90deg, #5e4519, var(--gold) 50%, #5e4519);
+}
+.body {
+  position: relative;
+  width: 10em;
+  height: 12em;
+  border: 1px solid rgba(232, 211, 162, 0.5);
+  border-radius: 1.2em;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.18)
+  );
+}
+.liquid {
+  position: absolute;
+  left: 0.7em;
+  right: 0.7em;
+  bottom: 0.7em;
+  height: 78%;
+  background: linear-gradient(180deg, var(--liquid-top), var(--liquid-bottom));
+  border-radius: 0.8em 0.8em 1em 1em;
+}
+
+.lable {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6.4em;
+  padding: 0.8em 0;
+  background: rgba(239, 233, 240, 0.92);
+  color: var(--night);
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  font-size: 1.3em;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+}
+
+/* Moving shine */
+.body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -70%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shine 7s ease-in-out infinite;
+}
+.stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: min(420px, 80vw);
+}
+/* Soft glow behind the bottle */
+.halo {
+  position: absolute;
+  width: 130%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(200, 164, 93, 0.3), transparent 62%);
+  animation: glow 6s ease-in-out infinite;
+}
+/* Bottle float gently up and down */
+.stage .bottle {
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+}
+
+.fade {
+  animation: fadeUp 0.14s ease both;
+}
+
+.d1 {
+  animation-delay: 0.2s;
+}
+.d2 {
+  animation-delay: 0.7s;
+}
+.d3 {
+  animation-delay: 1.2s;
+}
+.rule {
+  animation: draw 1.6s ease 0.7s both;
+}
+
+/* Animation */
+@keyframes shine {
+  0%,
+  55% {
+    left: -70%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes draw {
+  from {
+    transform: skewX(0);
+  }
+  to {
+    transform: skewX(1);
+  }
+}
+
+/* Section shared */
+.section {
+  padding: 110px 8%;
+  text-align: center;
+}
+.section h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 16px;
+}
+.section-intro {
+  max-width: 460px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+.section-plum {
+  background: var(--plum);
+}
+
+/* Product cards */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 60px;
+}
+.product {
+  padding: 50px 24px 44px;
+  border: 1px solid rgba(200, 164, 93, 0.25);
+  transition: border-color 0.6s;
+}
+.product .bottle {
+  margin: 0 auto 36px;
+}
+.product h3 {
+  font-size: 2rem;
+}
+.notes {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.price {
+  margin: 14px 0 24px;
+  color: var(--gold);
+  font-size: 1.9rem;
+}
+.product:hover {
+  border-color: var(--gold);
+}
+.product:hover .bottle {
+  transform: translateY(-12px);
+}
+
+/* Fragrance notes */
+.notes-grid {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.note {
+  padding-top: 24px;
+  border-top: 1px solid var(--gold);
+}
+.note h3 {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+.note p {
+  color: var(--muted);
+}
+
+/* Quote */
+blockquote {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-style: italic;
+}
+blockquote::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 60px;
+  margin: 0 auto 36px;
+  background: var(--gold);
+}
+cite {
+  display: block;
+  margin-top: 28px;
+  font-family: "Jost", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-style: normal;
+  color: var(--gold);
+}
+
+/* form */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 380px;
+  margin: 44px auto 0;
+}
+.form label {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.form input {
+  width: 100%;
+  padding: 12px 4px;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  color: var(--pearl);
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.05rem;
+}
+.form input::placeholder {
+  color: var(--muted);
+}
+.form input:focus {
+  outline: none;
+  border-bottom-color: var(--gold-light);
+  box-shadow: 0 1px 0 var(--gold-light);
+}
+
+/* Footer */
+.footer {
+  padding: 70px 8%;
+  text-align: center;
+  border-top: 1px solid rgba(200, 164, 93, 0.25);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.footer-logo {
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+}
+
+/* Media queries */
+@media (max-width: 700px) {
+  .header {
+    justify-content: center;
+  }
+  .nav {
+    display: none;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+  }
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rule {
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: center;
+  }
+  .big {
+    font-size: 14px;
+  }
+  .section {
+    padding: 80px 8%;
+  }
+}
